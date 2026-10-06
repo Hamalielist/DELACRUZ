@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Five beautiful destinations in the Philippines: Banaue, El Nido, Coron, Kawasan Falls, and Vigan.">
+  <meta name="theme-color" content="#0b3c49">
+  <title>Beautiful Spots in the Philippines</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <style>
+    :root {
+      --deep-sea: #0b3c49;
+      --lagoon: #137c8b;
+      --sea-foam: #eef6f4;
+      --sand: #f7e9c8;
+      --mango: #f2a900;
+      --ink: #17262b;
+      --muted: #4d6168;
+      --line: rgba(11, 60, 73, 0.12);
+      --serif: "Fraunces", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    [hidden] { display: none !important; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--sea-foam);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- Header / hero ---------- */
+    header {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4.5rem, 12vw, 8rem) 1.5rem clamp(6rem, 14vw, 9.5rem);
+      text-align: center;
+      color: #fff;
+      background:
+        radial-gradient(60rem 30rem at 85% -10%, rgba(242, 169, 0, 0.45), transparent 60%),
+        radial-gradient(40rem 25rem at 0% 100%, rgba(255, 255, 255, 0.12), transparent 60%),
+        linear-gradient(170deg, #1d9bad 0%, var(--lagoon) 55%, #0f6573 100%);
+    }
+
+    header > *:not(svg) { position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 1.4rem;
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    header h1 {
+      margin: 0 auto 1.1rem;
+      max-width: 16ch;
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .tagline {
+      max-width: 40ch;
+      margin: 0 auto 2.2rem;
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      line-height: 1.4;
+      color: floralwhite;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 600;
+      color: var(--deep-sea);
+      text-decoration: none;
+      background: var(--mango);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .waves {
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: clamp(50px, 8vw, 110px);
+      z-index: 0;
+    }
+
+    .wave-back { fill: rgba(255, 255, 255, 0.14); }
+    .wave-front { fill: var(--deep-sea); }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--deep-sea);
+      border-bottom: 3px solid var(--mango);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0.25rem;
+      margin: 0;
+      padding: 0.55rem 1rem;
+      list-style: none;
+      overflow-x: auto;
+      justify-content: center;
+      scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar { display: none; }
+
+    nav a {
+      display: block;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 0.93rem;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover { background: var(--lagoon); }
+
+    nav a[aria-current="true"] {
+      background: var(--mango);
+      color: var(--deep-sea);
+    }
+
+    nav a:focus-visible,
+    footer a:focus-visible,
+    .cta:focus-visible {
+      outline: 3px solid var(--mango);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 760px) {
+      nav ul { justify-content: flex-start; }
+    }
+
+    /* ---------- Main ---------- */
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3rem;
+      counter-reset: spot;
+    }
+
+    h2 {
+      margin: 0 0 0.6rem;
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--deep-sea);
+    }
+
+    p { margin: 0; max-width: 62ch; }
+
+    #intro {
+      max-width: 700px;
+      margin: 0 auto 4.5rem;
+      padding-left: 1.4rem;
+      border-left: 5px solid var(--mango);
+    }
+
+    #intro p {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* ---------- Spot cards ---------- */
+    article {
+      counter-increment: spot;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-areas:
+        "photo title"
+        "photo text"
+        "video video";
+      grid-template-rows: auto 1fr auto;
+      column-gap: clamp(1.5rem, 4vw, 3rem);
+      margin-bottom: 2.75rem;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow:
+        0 1px 2px rgba(11, 60, 73, 0.06),
+        0 28px 50px -30px rgba(11, 60, 73, 0.4);
+    }
+
+    article:nth-of-type(even) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      grid-template-areas:
+        "title photo"
+        "text photo"
+        "video video";
+    }
+
+    article h2 { grid-area: title; align-self: end; }
+
+    article h2::before {
+      content: "0" counter(spot) " / 05";
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: var(--lagoon);
+    }
+
+    article > p {
+      grid-area: text;
+      align-self: start;
+      padding-top: 0.4rem;
+      color: var(--muted);
+    }
+
+    figure {
+      grid-area: photo;
+      align-self: start;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--deep-sea);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      color: var(--sand);
+      background: linear-gradient(135deg, var(--lagoon), var(--deep-sea));
+      transition: transform 0.6s ease;
+    }
+
+    figure:hover img { transform: scale(1.04); }
+
+    figcaption {
+      padding: 0.8rem 1.1rem;
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--sand);
+      background: var(--deep-sea);
+    }
+
+    /* ---------- Video ---------- */
+    .spot-video {
+      grid-area: video;
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed var(--line);
+    }
+
+    .spot-video h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0 0 0.9rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--lagoon);
+    }
+
+    .spot-video h3::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 10px solid var(--mango);
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+    }
+
+    .spot-video video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #06232b;
+      border-radius: 18px;
+      box-shadow: 0 18px 36px -22px rgba(6, 35, 43, 0.8);
+    }
+
+    @media (max-width: 760px) {
+      article,
+      article:nth-of-type(even) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "title"
+          "photo"
+          "text"
+          "video";
+        margin-bottom: 2rem;
+      }
+
+      article h2 { margin-bottom: 1rem; }
+      article > p { padding-top: 1.1rem; }
+    }
+
+    /* ---------- Scroll reveal ---------- */
+    .js article,
+    .js #intro {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .js article.in,
+    .js #intro.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+      color: var(--sand);
+      background: var(--deep-sea);
+      border-top: 3px solid var(--mango);
+    }
+
+    footer p {
+      max-width: none;
+      font-size: 0.95rem;
+    }
+
+    footer address {
+      max-width: 480px;
+      margin: 2rem auto 0;
+      padding-top: 1.75rem;
+      font-style: normal;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    footer address h2 {
+      margin-bottom: 1.1rem;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    footer address ul {
+      display: grid;
+      gap: 1.1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    footer a {
+      color: var(--mango);
+      text-underline-offset: 3px;
+    }
+
+    footer a:hover { color: #fff; }
+
+    footer a svg {
+      vertical-align: -5px;
+      margin-right: 0.35rem;
+    }
+
+    footer iframe {
+      display: block;
+      width: 100%;
+      height: 220px;
+      margin-top: 0.7rem;
+      border: 0;
+      border-radius: 14px;
+    }
+
+    /* ---------- Music button ---------- */
+    .music-toggle {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 20;
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      border: 2px solid var(--mango);
+      border-radius: 50%;
+      color: var(--mango);
+      background: var(--deep-sea);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .music-toggle:hover { transform: scale(1.08); }
+
+    .music-toggle:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .music-toggle .eq {
+      display: none;
+      align-items: flex-end;
+      gap: 3px;
+      height: 20px;
+    }
+
+    .music-toggle .eq span {
+      width: 4px;
+      height: 40%;
+      border-radius: 2px;
+      background: currentColor;
+      animation: eq 1s ease-in-out infinite;
+    }
+
+    .music-toggle .eq span:nth-child(2) { animation-delay: 0.2s; }
+    .music-toggle .eq span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes eq {
+      0%, 100% { height: 30%; }
+      50% { height: 100%; }
+    }
+
+    body.music-on .music-toggle .eq { display: flex; }
+    body.music-on .music-toggle .muted-icon { display: none; }
+
+    .music-hint {
+      position: fixed;
+      right: 5.4rem;
+      bottom: 1.7rem;
+      z-index: 20;
+      max-width: calc(100vw - 7.5rem);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--deep-sea);
+      background: var(--sand);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 520px) {
+      .music-hint {
+        right: 1.25rem;
+        bottom: 5.5rem;
+        max-width: calc(100vw - 2.5rem);
+      }
+    }
+
+    /* ---------- Reduced motion ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      .js article,
+      .js #intro {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      figure img,
+      .cta,
+      .music-toggle { transition: none; }
+
+      .music-toggle .eq span { animation: none; height: 70%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="eyebrow">Travel Guide &middot; Philippines</p>
+    <h1>Beautiful Spots in the Philippines</h1>
+    <p class="tagline">Discover five breathtaking destinations worth visiting...</p>
+    <a class="cta" href="#intro">Start exploring</a>
+
+    <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path class="wave-back" d="M0,64 C240,110 480,10 720,50 C960,90 1200,20 1440,60 L1440,120 L0,120 Z"></path>
+      <path class="wave-front" d="M0,84 C240,40 480,120 720,84 C960,48 1200,110 1440,76 L1440,120 L0,120 Z"></path>
+    </svg>
+  </header>
+
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#banaue">Banaue Rice Terraces</a></li>
+      <li><a href="#el-nido">El Nido</a></li>
+      <li><a href="#coron">Coron</a></li>
+      <li><a href="#kawasan-falls">Kawasan Falls</a></li>
+      <li><a href="#vigan">Vigan</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>The Philippines is a country of more than 7,000 islands, with mountains, lagoons, waterfalls, and centuries-old towns. Here are five places every traveler should see.</p>
+    </section>
+
+    <article id="banaue">
+      <h2>Banaue Rice Terraces</h2>
+      <figure>
+        <img src="C:\Users\Hamaliel\Downloads\OneDrive_2026-10-06\Midterm Act7 DELACRUZ\Images\Banaue.jpg" alt="Green stepped rice terraces climbing a misty mountainside in Banaue">
+        <figcaption>The Banaue Rice Terraces in Ifugao, carved into the mountains by hand.</figcaption>
+      </figure>
+      <p>Built by the Ifugao people about 2,000 years ago, these terraces climb the Cordillera mountains in steep, stepped layers. They are often called the "Eighth Wonder of the World" and are best seen during planting season, when the fields glow bright green.</p>
+      <div class="spot-video">
+        <h3>Watch: Banaue</h3>
+        <video controls preload="metadata" playsinline poster="images/banaue.jpg" aria-label="Video tour of the Banaue Rice Terraces">
+          <source src="Videos\banaue.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </article>
+
+    <article id="el-nido">
+      <h2>El Nido, Palawan</h2>
+      <figure>
+        <img src="C:\Users\Hamaliel\Downloads\OneDrive_2026-10-06\Midterm Act7 DELACRUZ\Images\El nido.jpg" alt="Limestone cliffs rising from a clear turquoise lagoon with a small wooden boat">
+        <figcaption>A hidden lagoon in El Nido, surrounded by towering limestone cliffs.</figcaption>
+      </figure>
+      <p>El Nido sits on the northern tip of Palawan and is known for its dramatic limestone cliffs, secret lagoons, and white beaches. Island-hopping tours take visitors to spots like the Big Lagoon and Small Lagoon, which are ideal for kayaking and snorkeling.</p>
+      <div class="spot-video">
+        <h3>Watch: El Nido</h3>
+        <video controls preload="metadata" playsinline poster="images/el-nido.jpg" aria-label="Video tour of El Nido, Palawan">
+          <source src="Videos/el nido.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </article>
+
+    <article id="coron">
+      <h2>Coron, Palawan</h2>
+      <figure>
+        <img src="C:\Users\Hamaliel\Downloads\OneDrive_2026-10-06\Midterm Act7 DELACRUZ\Images\Coron.jpg" alt="Calm blue-green lake enclosed by steep rocky cliffs under a bright sky">
+        <figcaption>Kayangan Lake in Coron, often named one of the cleanest lakes in Asia.</figcaption>
+      </figure>
+      <p>Coron is famous for its crystal-clear lakes, warm lagoons, and World War II shipwrecks resting on the seabed. Divers come to explore the wrecks, while others swim in Kayangan Lake and soak in the natural hot springs at Maquinit.</p>
+      <div class="spot-video">
+        <h3>Watch: Coron</h3>
+        <video controls preload="metadata" playsinline poster="images/coron.jpg" aria-label="Video tour of Coron, Palawan">
+          <source src="Videos/Coron.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </article>
+
+    <article id="kawasan-falls">
+      <h2>Kawasan Falls, Cebu</h2>
+      <figure>
+        <img src="C:\Users\Hamaliel\Downloads\OneDrive_2026-10-06\Midterm Act7 DELACRUZ\Images\Kawasan.jpg" alt="Turquoise waterfall cascading over rocks into a pool surrounded by green jungle">
+        <figcaption>The turquoise pools of Kawasan Falls in Badian, Cebu.</figcaption>
+      </figure>
+      <p>Kawasan Falls is a multi-tiered waterfall deep in the jungle of Badian, in southern Cebu. Its bright turquoise water makes it perfect for swimming, bamboo rafting, and canyoneering, a popular activity that leads visitors down the river to the falls.</p>
+      <div class="spot-video">
+        <h3>Watch: Kawasan Falls</h3>
+        <video controls preload="metadata" playsinline poster="images/kawasan-falls.jpg" aria-label="Video tour of Kawasan Falls, Cebu">
+          <source src="Videos\Kawasan.mp4" type="video/mp4">
+        </video>
+      </div>
+    </article>
+
+    <article id="vigan">
+      <h2>Vigan, Ilocos Sur</h2>
+      <figure>
+        <img src="C:\Users\Hamaliel\Downloads\OneDrive_2026-10-06\Midterm Act7 DELACRUZ\Images\Vigan.jpg" alt="Cobblestone street lined with old Spanish colonial houses in Vigan">
+        <figcaption>Calle Crisologo, the cobblestone heart of Vigan's historic district.</figcaption>
+      </figure>
+      <p>Vigan is one of the best-preserved Spanish colonial towns in Asia and a UNESCO World Heritage Site. Visitors can ride a horse-drawn kalesa down Calle Crisologo, admire the old stone mansions, and taste local favorites like empanada and longganisa.</p>
+      <div class="spot-video">
+        <h3>Watch: Vigan</h3>
+        <video controls preload="metadata" playsinline poster="images/vigan.jpg" aria-label="Video tour of Vigan, Ilocos Sur">
+          <source src="Videos\Vigan.mp4" type="video/mp4">
+        </video>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>Images and information gathered from personal research.</p>
+
+    <address>
+      <h2>Contact Us:</h2>
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/dadzawawa/" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+            dadzawawa
+          </a>
+        </li>
+        <li>
+          <span>Tawiran, Obando, Bulacan</span>
+          <iframe
+            title="Map of Tawiran, Obando, Bulacan"
+            src="https://www.google.com/maps?q=Tawiran,+Obando,+Bulacan&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </li>
+        <li>
+          Subscribe &ndash;
+          <a href="mailto:dadzdelacruz248@gmail.com?subject=Subscribe">dadzdelacruz248@gmail.com</a>
+        </li>
+      </ul>
+    </address>
+  </footer>
+
+  <audio id="bgm" src="Audios\audio background.mp3" loop preload="auto" autoplay></audio>
+
+  <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
+    <span class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
+    <svg class="muted-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="22" y1="9" x2="16" y2="15"></line>
+      <line x1="16" y1="9" x2="22" y2="15"></line>
+    </svg>
+  </button>
+  <p class="music-hint" id="music-hint" hidden>Tap anywhere to start the music</p>
+
+  <script>
+    (function () {
+      var bgm = document.getElementById('bgm');
+      var toggle = document.getElementById('music-toggle');
+      var hint = document.getElementById('music-hint');
+      var videos = Array.prototype.slice.call(document.querySelectorAll('video'));
+      var userPaused = false;
+      var resumeAfterVideo = false;
+
+      bgm.volume = 0.35;
+
+      function setUI(playing) {
+        toggle.setAttribute('aria-pressed', String(playing));
+        toggle.setAttribute('aria-label', playing ? 'Mute background music' : 'Play background music');
+        document.body.classList.toggle('music-on', playing);
+      }
+
+      function start() {
+        var attempt = bgm.play();
+        if (attempt && typeof attempt.then === 'function') {
+          return attempt.then(function () {
+            setUI(true);
+            hint.hidden = true;
+            return true;
+          }).catch(function () {
+            setUI(false);
+            return false;
+          });
+        }
+        setUI(true);
+        return Promise.resolve(true);
+      }
+
+      // Try to autoplay on load. Browsers often block sound until the visitor
+      // interacts, so fall back to starting on the first click, key, or touch.
+      var events = ['pointerdown', 'keydown', 'touchstart'];
+
+      function unlock(e) {
+        events.forEach(function (name) { document.removeEventListener(name, unlock); });
+        if (e && toggle.contains(e.target)) { return; }
+        if (!userPaused) { start(); }
+      }
+
+      start().then(function (ok) {
+        if (!ok) {
+          hint.hidden = false;
+          events.forEach(function (name) { document.addEventListener(name, unlock); });
+        }
+      });
+
+      toggle.addEventListener('click', function () {
+        if (bgm.paused) {
+          userPaused = false;
+          start();
+        } else {
+          userPaused = true;
+          bgm.pause();
+          setUI(false);
+        }
+      });
+
+      // Pause the music while a video plays, then bring it back afterwards.
+      videos.forEach(function (video) {
+        video.addEventListener('play', function () {
+          videos.forEach(function (other) { if (other !== video) { other.pause(); } });
+          if (!bgm.paused) {
+            bgm.pause();
+            resumeAfterVideo = true;
+            setUI(false);
+          }
+        });
+
+        function maybeResume() {
+          var anyPlaying = videos.some(function (v) { return !v.paused && !v.ended; });
+          if (resumeAfterVideo && !anyPlaying && !userPaused) {
+            resumeAfterVideo = false;
+            start();
+          }
+        }
+
+        video.addEventListener('pause', maybeResume);
+        video.addEventListener('ended', maybeResume);
+      });
+
+      // Fade cards in as they scroll into view, and highlight the current nav link.
+      var cards = document.querySelectorAll('article, #intro');
+      var navLinks = {};
+      document.querySelectorAll('nav a').forEach(function (a) {
+        navLinks[a.getAttribute('href').slice(1)] = a;
+      });
+
+      if ('IntersectionObserver' in window) {
+        var reveal = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              reveal.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        cards.forEach(function (el) { reveal.observe(el); });
+
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              Object.keys(navLinks).forEach(function (id) {
+                navLinks[id].removeAttribute('aria-current');
+              });
+              var link = navLinks[entry.target.id];
+              if (link) {
+                link.setAttribute('aria-current', 'true');
+                var list = link.parentNode.parentNode;
+                list.scrollLeft = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
+              }
+            }
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        cards.forEach(function (el) { spy.observe(el); });
+      } else {
+        cards.forEach(function (el) { el.classList.add('in'); });
+      }
+    })();
+  </script>
+
+</body>
+</html>
